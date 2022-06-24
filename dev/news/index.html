@@ -72,6 +72,11 @@
 <li>Update in <code><a href="../reference/tidy.htest.html">tidy.htest()</a></code> converting matrix-columns to vector-columns (<a href="https://github.com/tidymodels/broom/issues/1081" class="external-link">#1081</a>).</li>
 <li>Address failures in <code><a href="../reference/tidy.glht.html">tidy.glht()</a></code> with <code>conf.int = TRUE</code> (<a href="https://github.com/tidymodels/broom/issues/1103" class="external-link">#1103</a>).</li>
 <li>Address failures in <code><a href="../reference/tidy.zoo.html">tidy.zoo()</a></code> when input data does not have <code>colnames</code> (<a href="https://github.com/tidymodels/broom/issues/1080" class="external-link">#1080</a>).</li>
+<li>Transition tidiers for bivariate linear or spline-based interpolation—using list tidiers to interface with objects from the akima package is now considered off-label. See the interp package for a FOSS alternative.</li>
+<li>Address failures in <code><a href="../reference/tidy.svyolr.html">tidy.svyolr()</a></code> when <code>p.values = TRUE</code>. Instead of aliasing <code><a href="../reference/tidy.polr.html">tidy.polr()</a></code> directly, <code><a href="../reference/tidy.svyolr.html">tidy.svyolr()</a></code> lightly wraps that method and warns if <code>p.values</code> is supplied (<a href="https://github.com/tidymodels/broom/issues/1107" class="external-link">#1107</a>).</li>
+<li>Adds a <code>term</code> column and introduces support for <code><a href="https://rdrr.io/pkg/car/man/linearHypothesis.html" class="external-link">car::lht()</a></code> output in <code><a href="../reference/tidy.anova.html">tidy.anova()</a></code> (<a href="https://github.com/tidymodels/broom/issues/1106" class="external-link">#1106</a> by <code>@grantmcdermott</code>).</li>
+<li>Adds a dedicated <code>glance.anova</code> method (which previously dispatched to the<br>
+deprecated <code><a href="../reference/data.frame_tidiers.html">glance.data.frame()</a></code> tidier, <a href="https://github.com/tidymodels/broom/issues/1106" class="external-link">#1106</a> by <code>@grantmcdermott</code>).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.8.0" id="broom-080">broom 0.8.0<a class="anchor" aria-label="anchor" href="#broom-080"></a></h2><p class="text-muted">CRAN release: 2022-04-13</p>
@@ -615,7 +620,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
   </div></footer></body></html>
